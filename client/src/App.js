@@ -1,21 +1,39 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import ReactDOM from 'react-dom';
+import NavBar from "./components/NavBar";
+import {useAuth0} from "./react-auth0-spa";
+import {Router, Route, Switch} from "react-router-dom";
+import Home from "./views/Home";
+import Profile from "./views/Profile";
+import history from "./utils/history";
+import PrivateRoute from "./components/PrivateRoute";
 
-class App extends Component {
-  render() {
+function App() {
+    const {loading} = useAuth0();
+
+    if (loading) {
+        return (
+            <div className="container m-auto" style={{ "textAlign": "center", "verticalAlign": "center" }}>
+            <div className="spinner-border text-primary" style={{ "width": "10rem", "height": "10rem" }} role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            </div>
+        );
+    }
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="App">
+            <Router history={history}>
+                <header>
+                    <NavBar/>
+                </header>
+                <Switch>
+                    <Route path="/" exact/>
+                    <PrivateRoute path="/profile" component={Profile}/>
+                    <PrivateRoute path="/home" component={Home}/>
+                </Switch>
+            </Router>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
     );
-  }
 }
 
 export default App;
