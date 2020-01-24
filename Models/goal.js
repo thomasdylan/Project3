@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const goalSchema = new Schema({
     title: { type: String, required: true },
     user: { type: String, required: true },
-    ammount: { type: Number, default: 0 },
-    goalAmmount: { type: Number, default: 0 },
+    amount: { type: Number, default: 0 },
+    goalAmount: { type: Number, default: 0 },
     date: { type: Date, default: Date.now }
 });
 
