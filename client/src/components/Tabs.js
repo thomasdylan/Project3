@@ -12,6 +12,8 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 import { useAuth0 } from "../react-auth0-spa";
+import GoalList from './GoalList';
+import Dashboard from './Dashboard';
 
 const Tabs = (props) => {
     const [activeTab,
@@ -26,7 +28,7 @@ const Tabs = (props) => {
     
     return (
         <div className="tab-div">
-            <Nav tabs>
+            <Nav tabs style={{ marginBottom: '1rem' }}>
                 <NavItem>
                     <NavLink
                         className={classnames({
@@ -65,24 +67,21 @@ const Tabs = (props) => {
                 <TabPane tabId="1">
                     <Row>
                         <Col sm="12">
-                            <img src={user.picture} alt="Profile" />
-                            <h2>{user.name}</h2>
-                            <p>{user.email}</p>
-                            <p>{user.id}</p>
+                            <Dashboard />
                         </Col>
                     </Row>
                 </TabPane>
                 <TabPane tabId="2">
                     <Row>
-                        <Col sm="6">
-                            <Progress animated color="success" value="25" />
+                        <Col sm="12">
+                            <GoalList />
                         </Col>
 
                     </Row>
                 </TabPane>
                 <TabPane tabId="3">
                     <Row>
-                        <Col sm="6">
+                        <Col sm="12">
                             <Progress animated color="danger" value="25"/>
                         </Col>
                     </Row>
