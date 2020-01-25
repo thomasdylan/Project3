@@ -12,20 +12,19 @@ export default function GoalList() {
     return (
         <div>
             <Row sm="10">
-                <Card body className="goal-layout">
+                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
                     <CircularProgressbar value={percentage} text={`${percentage}%`} />
                     <CardTitle>Goal Title</CardTitle>
                 </Card>
-                <Card body className="goal-layout">
+                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
                     <CircularProgressbar value={percentage} text={`${percentage}%`} />
                     <CardTitle>Goal Title</CardTitle>
                 </Card>
-                <Card body className="goal-layout">
+                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
                     <CircularProgressbar value={percentage} text={`${percentage}%`} />
                     <CardTitle>Goal Title</CardTitle>
                 </Card>
             </Row>
-            
         </div>
     )
 }
