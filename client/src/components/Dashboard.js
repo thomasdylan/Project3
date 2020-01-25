@@ -1,11 +1,11 @@
 import React from 'react';
-import { Progress } from 'reactstrap';
+import Tabs from './Tabs';
 
 export default function Dashboard() {
     return (
-        <div>
+        <div className= "dashboard-div">
             <h3>Dashboard</h3>
-            <Progress animated color="success" value="25" />
+            <Tabs />
         </div>
     )
 }
