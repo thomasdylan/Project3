@@ -3,10 +3,10 @@ import axios from "axios";
 export default {
     // Gets all goal by user
     getGoal: function (user) {
-        return axios.get("/api/goals" + user);
+        return axios.get("/api/goals/" + user);
     },
     // Gets the goal with the given id
-    getGoal: function (id) {
+    getGoalId: function (id) {
         return axios.get("/api/goals/" + id);
     },
     // Deletes the goal with the given id

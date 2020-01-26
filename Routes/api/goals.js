@@ -5,6 +5,10 @@ router.route("/")
     .get(goalsController.findAll)
     .post(goalsController.create);
 
+router.route("/:user")
+    .get(goalsController.findAll)
+    .post(goalsController.create);
+
 router
     .route("/:id")
     .get(goalsController.findById)

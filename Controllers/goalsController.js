@@ -1,11 +1,9 @@
 const db = require("../models");
 
-// Defining methods for the goalsController
 module.exports = {
     findAll: function (req, res) {
         db.Goal
-            .find({user: req.query})
-            .sort({ date: -1 })
+            .find({user: req.params.user})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
