@@ -1,24 +1,34 @@
 import React from 'react';
-import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-const Example = (props) => {
+
+const GoalForm = (props) => {
+
+    const FormSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
-        <Form>
-            <FormGroup row>
-                <Label for="GoalTitle" sm={2}>Goal Title</Label>
-                <Col sm={10}>
-                    <Input type="text" name="text" id="goalTitle" placeholder="ex. Savings, Vacation" />
-                </Col>
-            </FormGroup>
-            <FormGroup row>
-                <Label for="GoalAmount" sm={2}>Target Amount</Label>
-                <Col sm={10}>
-                    <Input type="text" name="text" id="goalAmount" placeholder="$" />
-                </Col>
-            </FormGroup>
-            <Button>Confirm</Button>
-        </Form>
+        <form onSubmit={FormSubmit}>
+            <div className="form-group">
+                <label for="goalTitle">Goal Title</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="goalTitle"
+                    aria-describedby="goalTitle"
+                    placeholder="ex. Savings, Vacation etc."/>
+            </div>
+            <div className="form-group">
+                <label for="goalAmount">Goal Amount</label>
+                <input
+                    type="number"
+                    className="form-control"
+                    id="goalAmount"
+                    placeholder="$1000"/>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
     );
 }
 
-export default Example;
+export default GoalForm;

@@ -2,9 +2,13 @@ const db = require("../models");
 
 module.exports = {
     findAll: function (req, res) {
+        console.log('req.params.user', req.params.user)
         db.Goal
             .find({user: req.params.user})
-            .then(dbModel => res.json(dbModel))
+            .then(dbModel => {
+                console.log('dbModel', dbModel)
+                return res.json(dbModel)
+            })
             .catch(err => res.status(422).json(err));
     },
     findById: function (req, res) {

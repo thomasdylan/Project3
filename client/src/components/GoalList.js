@@ -8,37 +8,30 @@ import API from '../utils/API';
 
 export default function GoalList() {
     const { user } = useAuth0();
+    const [userGoals, setUserGoals] = useState();
     const [goalTitle, setGoalTitle] = useState();
     const [goalUser, setGoalUser] = useState(user.sub);
     const [currentAmount, setCurrentAmount] = useState();
     const [goalAmount, setGoalAmount] = useState();
-    const percentage = 69;
     const currentUser = user.sub;
 
     useEffect(() => {
         API.getGoal(currentUser)
         .then(data  => {
-            console.log("useEffect data return: ", data);
-            console.log("goal user: ", goalUser);
-            console.log("current user: ", currentUser)
+            setUserGoals(data.data);
+            console.log(userGoals);
         });
     }, []);
     
     return (
         <div>
             <Row sm="12">
-                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
-                    <CircularProgressbar value={percentage} text={`${goalAmount - currentAmount}%`} />
-                    <CardTitle>{goalTitle}</CardTitle>
-                </Card>
-                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
-                    <CircularProgressbar value={percentage} text={`${percentage}%`} />
-                    <CardTitle>Goal Title</CardTitle>
-                </Card>
-                <Card body className="goal-layout" onClick={() => console.log("Clicked") }>
-                    <CircularProgressbar value={percentage} text={`${percentage}%`} />
-                    <CardTitle>Goal Title</CardTitle>
-                </Card>
+
+                    <Card body className="goal-layout" onClick={() => console.log("Clicked")}>
+                        <CircularProgressbar value={5} text={`${(5)}%`} />
+                        <CardTitle>{goalUser}</CardTitle>
+                    </Card>
+
             </Row>
         </div>
     )
