@@ -22,3 +22,32 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.loading {
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 20%;
+}
+
+.nav-text {
+  text-emphasis: none;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-text:hover {
+  text-emphasis: none;
+  text-decoration: none;
+  color: black;
+}
+
+.tab-div {
+  align-content: center;
+}
+
+.goal-layout {
+  display: inline-block;
+  height: 10em;
+  width: 100%;
+}

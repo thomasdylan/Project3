@@ -1,11 +1,26 @@
 import React from 'react';
-import { Progress } from 'reactstrap';
+import { useAuth0 } from "../react-auth0-spa";
+import { Row, Col, Button } from 'reactstrap';
+import GoalList from './GoalList';
+import GoalForm from './GoalForm';
 
 export default function Dashboard() {
+    const { user } = useAuth0();
     return (
-        <div>
-            <h3>Dashboard</h3>
-            <Progress animated color="success" value="25" />
+        <div className= "container">
+            <Row>
+                <Col sm='3'>
+                    <Button outline color="primary">
+                        Create Goal
+                    </Button>
+                </Col>
+                <Col sm='6'>
+                    <GoalForm />
+                </Col>
+                <Col sm='3'>
+                    <GoalList />
+                </Col>
+            </Row>
         </div>
     )
 }

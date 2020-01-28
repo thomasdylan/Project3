@@ -13,8 +13,8 @@ function App() {
 
     if (loading) {
         return (
-            <div className="container m-auto" style={{ "textAlign": "center", "verticalAlign": "center" }}>
-            <div className="spinner-border text-primary" style={{ "width": "10rem", "height": "10rem" }} role="status">
+            <div className="container m-auto loading">
+            <div className="spinner-border text-primary loading" style={{ "width": "10rem", "height": "10rem" }} role="status">
                     <span className="sr-only">Loading...</span>
                 </div>
             </div>
