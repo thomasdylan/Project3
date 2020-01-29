@@ -26,7 +26,7 @@ export default function GoalList() {
                 {userGoals.map(goal => {
                     return(
                     <Card body className="goal-layout" onClick={() => console.log("Clicked")}>
-                        <CircularProgressbar value={goal.goalAmount / goal.amount} text={`${goal.goalAmount / goal.amount}%`} />
+                        <CircularProgressbar value={((goal.amount / goal.goalAmount).toFixed(2)) * 100} text={`${((goal.amount / goal.goalAmount).toFixed(2)) * 100}%`} />
                         <CardTitle>{goal.title}</CardTitle>
                     </Card>
                     )
