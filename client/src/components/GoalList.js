@@ -8,31 +8,32 @@ import API from '../utils/API';
 
 export default function GoalList() {
     const { user } = useAuth0();
-    const [userGoals, setUserGoals] = useState();
+    const [userGoals, setUserGoals] = useState([]);
     const [goalTitle, setGoalTitle] = useState();
-    const [goalUser, setGoalUser] = useState(user.sub);
-    const [currentAmount, setCurrentAmount] = useState();
-    const [goalAmount, setGoalAmount] = useState();
-    const currentUser = user.sub;
-
+    const [goalUser] = useState(user.sub);
+    
     useEffect(() => {
-        API.getGoal(currentUser)
-        .then(data  => {
-            setUserGoals(data.data);
-            console.log(userGoals);
+        API.getGoal(goalUser)
+        .then(res => {
+            setUserGoals(res.data);
+            console.log("userGoals: ", userGoals);
         });
-    }, []);
+    }, [userGoals]);
     
     return (
         <div>
             <Row sm="12">
-
+                {userGoals.map(goal => {
+                    return(
                     <Card body className="goal-layout" onClick={() => console.log("Clicked")}>
-                        <CircularProgressbar value={5} text={`${(5)}%`} />
-                        <CardTitle>{goalUser}</CardTitle>
+                        <CircularProgressbar value={goal.goalAmount / goal.amount} text={`${goal.goalAmount / goal.amount}%`} />
+                        <CardTitle>{goal.title}</CardTitle>
                     </Card>
-
+                    )
+                })}
             </Row>
         </div>
     )
 }
+
+
