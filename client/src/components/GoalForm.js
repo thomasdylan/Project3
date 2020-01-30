@@ -18,6 +18,8 @@ const GoalForm = (props) => {
         API.saveGoal(goalData)
             .then(() => console.log("Successfully added goal"))
             .catch(err => console.log(err));
+
+        window.location.reload(false);
     };
 
     return (

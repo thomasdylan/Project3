@@ -76,7 +76,6 @@ const Tabs = (props) => {
                         <Col sm="12">
                             <GoalList />
                         </Col>
-
                     </Row>
                 </TabPane>
                 <TabPane tabId="3">
