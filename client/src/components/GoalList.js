@@ -24,7 +24,7 @@ export default function GoalList() {
             <Row sm="12">
                 {userGoals.map(goal => {
                     return(
-                    <Card body className="goal-layout" onClick={() => console.log("Clicked")}>
+                    <Card body className="goal-layout">
                             <CircularProgressbar 
                                 circleRatio={0.75} 
                                 value={((goal.amount / goal.goalAmount).toFixed(2)) * 100} 

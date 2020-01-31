@@ -46,12 +46,38 @@
   align-content: center;
 }
 
+.user-goals-container {
+  margin: 0 2em;
+}
+
 .goal-layout {
   display: inline-block;
   height: 10em;
   width: 100%;
 }
 
+.full-goals {
+  display: inline-block;
+  margin: 0 .05rem;
+}
+
+.goal-percentage {
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
 .card-title {
   margin-top: -20px;
+}
+
+.goal-delete-button {
+  height: 24px;
+  width: 24px;
+  padding: 0px !important;
+  margin-top: 1px;
+  margin-right: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
