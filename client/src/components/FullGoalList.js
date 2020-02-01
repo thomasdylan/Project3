@@ -32,13 +32,19 @@ export default function FullGoalList() {
         console.log("is updating: ", isUpdating)
     }, [isUpdating]);
 
+    const deleteGoal = (id) => {
+        setUpdating(true);
+        API.deleteGoal(id)
+           .then(res => console.log("deleted goal ", res));
+    }
+
     return (
         <div className="user-goals-container">
             <Row sm="12">
                 {userGoals.map(goal => {
                     return (
                         <Card body className="full-goals">
-                            <Button className="goal-delete-button" color="danger"><strong>X</strong></Button>
+                            <Button className="goal-delete-button" color="danger" onClick={() => {deleteGoal(goal._id)}}><strong>X</strong></Button>
                             <CircularProgressbar
                                 className="goal-percentage"
                                 circleRatio={0.75}
@@ -50,7 +56,7 @@ export default function FullGoalList() {
                                 trailColor: "#eee"
                             })}/>
                             <CardTitle>{goal.title}</CardTitle>
-                            <CardText>{goal.amount} / {goal.goalAmount}</CardText>
+                            <CardText>${goal.amount} / ${goal.goalAmount}</CardText>
                             <UncontrolledDropdown setActiveFromChild>
                                 <DropdownToggle tag="a" className="nav-link"> 
                                     <Button color="success">Update</Button>
