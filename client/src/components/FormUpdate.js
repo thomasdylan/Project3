@@ -4,16 +4,17 @@ import API from '../utils/API';
 
 const FormUpdate = (props) => {
     const [amount, setAmount] = useState();
+
     const FormSubmit = (e) => {
         e.preventDefault();
         const goalData = {
             amount: amount
         };
-        API.updateGoal(goalData)
+
+        API.updateGoal(props.goalKey, goalData)
             .then(() => console.log("Successfully updated goal"))
             .catch(err => console.log(err));
-
-        window.location.reload(false);
+        props.updating(true);
     };
 
     return (
@@ -27,7 +28,7 @@ const FormUpdate = (props) => {
                        id="updateGoal" 
                        placeholder="1000" />
             </FormGroup>
-            <Button color="success">Submit</Button>
+            <Button type="submit" onClick={FormSubmit} color="success">Submit</Button>
         </Form>
     );
 }

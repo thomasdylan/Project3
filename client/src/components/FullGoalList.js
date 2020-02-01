@@ -5,6 +5,7 @@ import {useAuth0} from "../react-auth0-spa";
 import {
     Card,
     CardTitle,
+    CardText,
     Row,
     UncontrolledDropdown,
     DropdownToggle,
@@ -19,14 +20,17 @@ export default function FullGoalList() {
     const {user} = useAuth0();
     const [userGoals, setUserGoals] = useState([]);
     const [goalUser] = useState(user.sub);
+    const [isUpdating, setUpdating] = useState(false);
 
     useEffect(() => {
+        setUpdating(false);
         API
             .getGoal(goalUser)
             .then(res => {
                 setUserGoals(res.data);
             });
-    }, []);
+        console.log("is updating: ", isUpdating)
+    }, [isUpdating]);
 
     return (
         <div className="user-goals-container">
@@ -46,12 +50,13 @@ export default function FullGoalList() {
                                 trailColor: "#eee"
                             })}/>
                             <CardTitle>{goal.title}</CardTitle>
+                            <CardText>{goal.amount} / {goal.goalAmount}</CardText>
                             <UncontrolledDropdown setActiveFromChild>
                                 <DropdownToggle tag="a" className="nav-link"> 
                                     <Button color="success">Update</Button>
                                 </DropdownToggle>
                                 <DropdownMenu>
-                                    <DropdownItem header><FormUpdate key={goal._id}/></DropdownItem>
+                                    <DropdownItem header><FormUpdate goalKey={goal._id} updating={setUpdating}/></DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Card>

@@ -6,17 +6,19 @@ import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import API from '../utils/API';
 
 
-export default function GoalList() {
+export default function GoalList(props) {
     const { user } = useAuth0();
     const [userGoals, setUserGoals] = useState([]);
     const [goalUser] = useState(user.sub);
     
     useEffect(() => {
+        console.log(props.newGoalAdded);
+        props.resetNewGoal(false);
         API.getGoal(goalUser)
         .then(res => {
             setUserGoals(res.data);
         });
-    }, []);
+    }, [props.newGoalAdded]);
     
     console.log("userGoals: ", userGoals);
     return (
