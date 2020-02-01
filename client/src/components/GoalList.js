@@ -30,7 +30,7 @@ export default function GoalList(props) {
                             <CircularProgressbar 
                                 circleRatio={0.75} 
                                 value={((goal.amount / goal.goalAmount).toFixed(2)) * 100} 
-                                text={`${((goal.amount / goal.goalAmount).toFixed(2)) * 100}%`} 
+                                text={`${((goal.amount / goal.goalAmount).toFixed(2)) * 100}%`}
                                 styles={buildStyles({
                                     rotation: 1 / 2 + 1 / 8,
                                     strokeLinecap: "butt",
