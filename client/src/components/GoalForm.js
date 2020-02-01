@@ -6,6 +6,7 @@ const GoalForm = (props) => {
 
     const [title, setTitle] = useState();
     const [amount, setAmount] = useState();
+    const [goalAmount, setGoalAmount] = useState();
     const { user } = useAuth0();
 
     const FormSubmit = (e) => {
@@ -13,13 +14,13 @@ const GoalForm = (props) => {
         const goalData = {
             title: title,
             user: user.sub,
-            goalAmount: amount
+            amount: amount,
+            goalAmount: goalAmount
         };
         API.saveGoal(goalData)
             .then(() => console.log("Successfully added goal"))
             .catch(err => console.log(err));
-
-        window.location.reload(false);
+        props.newGoalAdded(true);
     };
 
     return (
@@ -36,13 +37,23 @@ const GoalForm = (props) => {
                     placeholder="ex. Savings, Vacation etc."/>
             </div>
             <div className="form-group">
-                <label for="goalAmount" autocomplete="off">Goal Amount</label>
+                <label for="goalAmount" autocomplete="off">Current Amount</label>
+                <input
+                    type="number"
+                    className="form-control"
+                    id="amount"
+                    value={amount}
+                    onChange={e => setAmount(e.target.value)}
+                    placeholder="$10" />
+            </div>
+            <div className="form-group">
+                <label for="goalAmount" autocomplete="off">Total Goal Amount</label>
                 <input
                     type="number"
                     className="form-control"
                     id="goalAmount"
-                    value={amount}
-                    onChange={e => setAmount(e.target.value)}
+                    value={goalAmount}
+                    onChange={e => setGoalAmount(e.target.value)}
                     placeholder="$1000"/>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>

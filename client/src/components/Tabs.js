@@ -12,7 +12,7 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 import { useAuth0 } from "../react-auth0-spa";
-import GoalList from './GoalList';
+import FullGoalList from './FullGoalList';
 import Dashboard from './Dashboard';
 
 const Tabs = (props) => {
@@ -74,7 +74,7 @@ const Tabs = (props) => {
                 <TabPane tabId="2">
                     <Row>
                         <Col sm="12">
-                            <GoalList />
+                            <FullGoalList />
                         </Col>
                     </Row>
                 </TabPane>
