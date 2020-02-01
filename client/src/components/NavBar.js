@@ -38,12 +38,12 @@ const NavBar = () => {
                             </NavItem>
                         </Nav>
                     )}                       
-                    <NavbarText style={{ float: "right" }}>
+                    <NavbarText className="nav-button">
                         {!isAuthenticated && (
                             <button
                                 type="button"
                                 className="btn btn-light"
-                                onClick={() => loginWithRedirect({})} style={{ float: "right" }}>Log in | Sign up
+                                onClick={() => loginWithRedirect({})}>Log in | Sign up
                             </button>
                         )} 
                         {isAuthenticated && 

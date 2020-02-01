@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Button } from 'reactstrap';
 import { useAuth0 } from "../react-auth0-spa";
 import API from '../utils/API';
 
@@ -56,7 +57,7 @@ const GoalForm = (props) => {
                     onChange={e => setGoalAmount(e.target.value)}
                     placeholder="$1000"/>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <Button type="submit" color="success" className="btn btn-primary">Submit</Button>
         </form>
     );
 }
