@@ -1,10 +1,10 @@
 import React from 'react'
-import Dashboard from '../components/Dashboard';
+import Tabs from '../components/Tabs';
 
 export default function Home() {
     return (
         <div>
-            <Dashboard />
+            <Tabs />
         </div>
     )
 }
