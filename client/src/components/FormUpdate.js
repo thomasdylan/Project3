@@ -16,7 +16,10 @@ const FormUpdate = (props) => {
             .then(() => console.log("Successfully updated goal"))
             .catch(err => console.log(err));
         if(amount >= props.goalAmount) {
-            Confetti();
+            Confetti({
+                particleCount: 300,
+                spread: 360
+            });
         }
         props.updating(true);
     };

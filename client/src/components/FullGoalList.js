@@ -44,7 +44,18 @@ export default function FullGoalList() {
                 {userGoals.map(goal => {
                     return (
                         <Card body className="full-goals">
-                            <Button className="goal-delete-button" color="danger" onClick={() => {deleteGoal(goal._id)}}><strong>X</strong></Button>
+                            <UncontrolledDropdown setActiveFromChild>
+                                <DropdownToggle tag="a" className="nav-link" style={{ float: "right" }}>
+                                    <Button className="goal-delete-button" color="danger"><strong>X</strong></Button>
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    <DropdownItem header>
+                                        <p>Are you sure you want to delete?</p> <br />
+                                        <Button className="btn" color="danger" onClick={() => { deleteGoal(goal._id) }}>Confirm Delete</Button>
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                            
                             <CircularProgressbar
                                 className="goal-percentage"
                                 circleRatio={0.75}
