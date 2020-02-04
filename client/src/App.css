@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Roboto Slab', serif;
 }
 
 .App-logo {
@@ -59,6 +60,7 @@
 .full-goals {
   display: inline-block;
   margin: 0 .05rem;
+  max-width: 35%;
 }
 
 .goal-percentage {
@@ -85,3 +87,8 @@
 .nav-button {
   float: right;
 }
+
+.login-button {
+  float: right !important;
+}
+

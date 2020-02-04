@@ -62,7 +62,12 @@ export default function FullGoalList() {
                                     <Button color="success">Update</Button>
                                 </DropdownToggle>
                                 <DropdownMenu>
-                                    <DropdownItem header><FormUpdate goalKey={goal._id} updating={setUpdating}/></DropdownItem>
+                                    <DropdownItem header>
+                                        <FormUpdate goalKey={goal._id} 
+                                                    updating={setUpdating} 
+                                                    goalAmount={goal.goalAmount}
+                                                    />
+                                    </DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Card>
