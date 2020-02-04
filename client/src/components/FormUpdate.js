@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Confetti from 'canvas-confetti';
 import API from '../utils/API';
 
 const FormUpdate = (props) => {
@@ -14,6 +15,9 @@ const FormUpdate = (props) => {
         API.updateGoal(props.goalKey, goalData)
             .then(() => console.log("Successfully updated goal"))
             .catch(err => console.log(err));
+        if(amount >= props.goalAmount) {
+            Confetti();
+        }
         props.updating(true);
     };
 
