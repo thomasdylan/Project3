@@ -17,7 +17,7 @@ const FormUpdate = (props) => {
             .catch(err => console.log(err));
         if(amount >= props.goalAmount) {
             Confetti({
-                particleCount: 200,
+                particleCount: 300,
                 spread: 360
             });
         }
