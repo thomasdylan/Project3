@@ -42,7 +42,7 @@ const NavBar = () => {
                         {!isAuthenticated && (
                             <button
                                 type="button"
-                                className="btn btn-light"
+                                className="btn btn-light login-button"
                                 onClick={() => loginWithRedirect({})}>Log in | Sign up
                             </button>
                         )} 
