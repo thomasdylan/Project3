@@ -17,10 +17,16 @@ export default function Dashboard() {
                         slot='8434602954'
                     />
                 </Col>
+                
                 <Col sm='6'>
+                    <h3>Create Goal</h3>
+                    <hr /> 
                     <GoalForm  newGoalAdded={setNewGoal}/>
                 </Col>
+                
                 <Col sm='3'>
+                    <h3>Your Goal</h3>
+                    <hr /> 
                     <GoalList newGoalAdded={newGoal} resetNewGoal={setNewGoal}/>
                 </Col>
             </Row>

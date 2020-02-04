@@ -5,6 +5,7 @@ import {useAuth0} from "./react-auth0-spa";
 import {Router, Route, Switch} from "react-router-dom";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import Landing from "./views/Landing";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -27,7 +28,7 @@ function App() {
                     <NavBar/>
                 </header>
                 <Switch>
-                    <Route path="/" exact/>
+                    <Route path="/" exact component={Landing}/>
                     <PrivateRoute path="/profile" component={Profile}/>
                     <PrivateRoute path="/home" component={Home}/>
                 </Switch>
