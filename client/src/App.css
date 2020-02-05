@@ -92,3 +92,30 @@
   float: right !important;
 }
 
+.landing-page {
+  background-image: url("https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 100vh;
+}
+
+.landing-text-back {
+  background-color: rgba(220,220,200,0.5);
+  height: 100vh;
+  margin: 0 15%;
+  padding-top: 5px;
+  border-radius: 25px;
+  align-content: center;
+}
+
+.landing-text {
+  color: black;
+  margin: 0 1em;
+}
+
+.landing-image {
+  width: 50%;
+}
+
+.landing-button {
+  text-align: center;
+  align-content: center;
+}
