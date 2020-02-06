@@ -1,9 +1,9 @@
-const express = require("express");
+var express = require("express");
 
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+var mongoose = require("mongoose");
+var routes = require("./routes");
+var app = express();
+var PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
