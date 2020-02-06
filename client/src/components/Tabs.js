@@ -51,17 +51,6 @@ const Tabs = (props) => {
                         Goals
                     </NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={classnames({
-                            active: activeTab === '3'
-                        })}
-                        onClick={() => {
-                            toggle('3');
-                        }}>
-                        Third
-                    </NavLink>
-                </NavItem>
             </Nav>
             <TabContent activeTab={activeTab}>
                 <TabPane tabId="1">
@@ -75,13 +64,6 @@ const Tabs = (props) => {
                     <Row>
                         <Col sm="12">
                             <FullGoalList />
-                        </Col>
-                    </Row>
-                </TabPane>
-                <TabPane tabId="3">
-                    <Row>
-                        <Col sm="12">
-                            <Progress animated color="danger" value="25"/>
                         </Col>
                     </Row>
                 </TabPane>

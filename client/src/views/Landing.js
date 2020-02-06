@@ -16,7 +16,9 @@ export default function Landing() {
                     near enough for them to retire. This is where smart goals can help. With Smart
                     Goals you can create and track your personal financial goals for both short term
                     and long term goals without having to pay for any sort of software or other
-                    financial services. Being able to visually track your progress can help you save
+                    financial services. </p>
+                <p className="landing-text">
+                    Being able to visually track your progress can help you save
                     more money and put you on the right path for accomplishing your goals. Smart goals
                     also allows you to see what others are saving for without revealing any personal
                     information. Sign up now for free!
