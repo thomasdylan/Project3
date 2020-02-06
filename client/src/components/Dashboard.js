@@ -10,9 +10,9 @@ export default function Dashboard() {
         <div className= "container">
             <Row>
                 <Col sm='3'>
-                    <Button outline color="primary">
+                    {/* <Button outline color="primary">
                         Create Goal
-                    </Button>
+                    </Button> */}
                 </Col>
                 <Col sm='6'>
                     <GoalForm />

@@ -28,41 +28,41 @@ const Tabs = (props) => {
     
     return (
         <div className="tab-div">
-            <Nav tabs style={{ marginBottom: '1rem' }}>
-                <NavItem>
-                    <NavLink
-                        className={classnames({
-                        active: activeTab === '1'
-                    })}
-                        onClick={() => {
-                        toggle('1');
-                    }}>
-                        Dashboard
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={classnames({
-                        active: activeTab === '2'
-                    })}
-                        onClick={() => {
-                        toggle('2');
-                    }}>
-                        Goals
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={classnames({
-                            active: activeTab === '3'
-                        })}
-                        onClick={() => {
-                            toggle('3');
-                        }}>
-                        Third
-                    </NavLink>
-                </NavItem>
-            </Nav>
+      <Nav vertical>
+      
+        <NavItem>
+          <NavLink className={classnames({
+            active: activeTab === '1'
+          })}
+            onClick={() => {
+              toggle('1');
+            }}>
+              Dashboard 
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink                         
+            className={classnames({
+            active: activeTab === '2'
+            })}
+            onClick={() => {
+            toggle('2');
+            }}>
+            Goals
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink                         
+          className={classnames({
+          active: activeTab === '3'
+          })}
+          onClick={() => {
+          toggle('3');
+          }}>
+          Social
+        </NavLink>
+        </NavItem>
+        </Nav>
             <TabContent activeTab={activeTab}>
                 <TabPane tabId="1">
                     <Row>
