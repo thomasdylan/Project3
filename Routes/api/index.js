@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("./node_modules/express").Router();
 const goalRoutes = require("./goals");
 
 router.use("/goals", goalRoutes);
